@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head.ejs %>
+</head>
+<body>
+    <% include ../partials/header.ejs %>
+    <div class="container">
+        
+
+        <% include ../partials/_error.ejs %>
+        <div class="card card-body">
+            <img src="/images/logo.png" class="logo" alt="">
+            <h3 class="text-center">Account Register</h3>
+            <form action="/users/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"  name="name" value="<%= (typeof name != "undefined" ? name : "")%>" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" value="<%= (typeof email != "undefined" ? email : "") %>" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" value="<%= (typeof password != "undefined" ? password : "") %>" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2" value="<%= (typeof password2 != "undefined" ? password2 : "") %>"class="form-control" required>
+                </div>
+                <button type="submit"class="btn btn-success">Login</button>
+            </form>
+        </div>
+
+    </div>
+    <% include ../partials/scripts.ejs %>
+</body>
+</html>

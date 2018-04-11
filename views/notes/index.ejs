@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body>
+    <% include ../partials/header %>
+    <div class="container">
+        <%if(notes.length != 0){%>
+    
+            <% for(var i =0;i<notes.length ;i++) {%>
+                <div class="card card-body mb-2">
+                    <h4 class= "mb-3"><%= notes[i].title %></h4>
+                    <p><%= notes[i].details %></p>
+                    
+                    <a class="btn btn-dark mb-2"href="/notes/edit/<%=notes[i].id%>" >Edit</a>
+                    <form method="post" action="/notes/<%=notes[i].id%>?_method=DELETE">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" class="submit btn btn-danger btn-block" value="Delete">
+                    </form>
+                </div>
+            <%}%>
+
+
+        <%} else{%>
+           <p>No Notes Added </p> 
+        <%}%>
+
+
+
+
+
+
+    </div>
+
+    <% include ../partials/scripts %>
+</body>
+</html>

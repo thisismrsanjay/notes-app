@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <% include partials/head.ejs %>
+</head>
+<body>
+    
+    <% include partials/header.ejs %>
+        <div class="container">
+            <% include partials/_msg.ejs %>
+            <div class="jumbotron text-center">
+                <h1 class="display-3"><%= title %></h1>
+                <p >Why writing in same old fashion Make notes Smartly with <br> </p>
+                <img src="/images/notes.png" alt="notes" class=""><br>
+                <a href="/notes/add" class="btn btn-dark btn-lg mt-4">Add Notes</a>
+            </div>
+
+    
+    
+         </div>
+    <% include partials/scripts.ejs%>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<%try{%>
+    <% for(var i =0;i< error.length;i++){%>
+        <div class="alert alert-danger"><%= error[i] %></div>
+    <%}%>
+<%}catch (err){}%>
+
+<%try{%>
+    <% for(var i =0;i< errors.length;i++){%>
+        <div class="alert alert-danger"><%= errors[i].text %></div>
+    <%}%>
+<%}catch (err){}%>
+

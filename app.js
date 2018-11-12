@@ -20,11 +20,12 @@ const db =require('./config/database');
 //Map global promise -get rid of warning 
 mongoose.Promise =global.Promise;
 //connect to mongoose
-mongoose.connect(db.mongoURI,{
-    useMongoClient:true
-})
-    .then(() => console.log('MongoDB Connected....'))
-    .catch(err => console.log(err));
+mongoose.connect(db.mongoURI,{ useCreateIndex: true,useNewUrlParser: true });
+var dbs = mongoose.connection;
+dbs.on('error', console.error.bind(console, 'connection error:'));
+dbs.once('open', function() {
+ console.log('database connected'); 
+});
 
 
 //Body-Parser middleware
